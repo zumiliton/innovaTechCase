@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<main class="container">
+
+    <h1>Arduino Multimodal Assistant</h1>
+
+    <section class="card">
+
+        <h2>Identify your Arduino board</h2>
+
+        <label class="upload-area" for="imageInput">
+            <span>📷</span>
+            <strong>Choose an image</strong>
+            <small>PNG, JPG or JPEG</small>
+        </label>
+
+        <input
+            id="imageInput"
+            type="file"
+            accept="image/png,image/jpeg"
+            hidden
+        >
+
+        <div id="previewContainer" class="preview hidden">
+            <img id="preview" alt="Selected Arduino image">
+        </div>
+
+        <button id="uploadButton" disabled>
+            Identify board
+        </button>
+
+        <div id="result" class="result hidden"></div>
+
+    </section>
+
+</main>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>
