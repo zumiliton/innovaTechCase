@@ -1,19 +1,19 @@
 from pathlib import Path
 
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from app.api.routes.health import router as health_router
-from fastapi.staticfiles import StaticFiles
-
-BASE_DIR = Path(__file__).resolve().parents[1]
-FRONTEND_DIR = BASE_DIR / "frontend"
+from app.api.routes.predict import router as predict_router
 
 
 app = FastAPI(
     title="Arduino Multimodal Assistant",
-    version="0.1.0",
 )
+
+
+FRONTEND_DIR = Path(__file__).resolve().parents[1] / "frontend"
+
 
 app.mount(
     "/static",
@@ -21,18 +21,18 @@ app.mount(
     name="static",
 )
 
-app.include_router(health_router)
+
+app.include_router(
+    predict_router,
+    prefix="/api",
+)
 
 
-@app.get("/", include_in_schema=False)
-async def frontend():
+@app.get("/")
+async def root():
     return FileResponse(FRONTEND_DIR / "index.html")
 
 
-@app.post("/api/upload")
-async def upload_image(file: UploadFile = File(...)):
-    return {
-        "filename": file.filename,
-        "content_type": file.content_type,
-        "message": "Image received successfully",
-    }
+@app.get("/health")
+async def health():
+    return {"status": "ok"}

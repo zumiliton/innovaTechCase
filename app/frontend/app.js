@@ -40,17 +40,19 @@ uploadButton.addEventListener("click", async () => {
 
     try {
 
-        const response = await fetch("/api/upload", {
+        const response = await fetch("api/predict", {
             method: "POST",
             body: formData,
         });
 
         const data = await response.json();
 
-        result.textContent =
-            `${data.filename} received successfully`;
+        result.innerHTML = `
+            <strong>Detected board:</strong> Arduino ${data.board}<br>
+            <strong>Confidence:</strong> ${(data.confidence * 100).toFixed(1)}%
+        `;
 
-        result.classList.remove("hidden");
+result.classList.remove("hidden");
 
     } catch (error) {
 
