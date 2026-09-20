@@ -1,0 +1,1010 @@
+[
+  {
+    "id": 0,
+    "text": "**Fuente:** `tech-specs.yml` oficial de Arduino, convertido sin modificar valores ni unidades.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "especificaciones.md",
+      "section": "Especificaciones técnicas"
+    }
+  },
+  {
+    "id": 1,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Name | Arduino® Mega 2560 Rev3 |\n| SKU | A000067 |\n\n| Microcontroller | ATmega2560 |\n\n| USB connector | USB-B |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "especificaciones.md",
+      "section": "Board"
+    }
+  },
+  {
+    "id": 2,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Built-in LED Pin | 13 |\n| Digital I/O Pins | 54 |\n| Analog input pins | 16 |\n| PWM pins | 15 |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "especificaciones.md",
+      "section": "Pins"
+    }
+  },
+  {
+    "id": 3,
+    "text": "| Campo | Valor |\n| --- | --- |\n| UART | Yes, 4 |\n| I2C | True |\n| SPI | True |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "especificaciones.md",
+      "section": "Communication"
+    }
+  },
+  {
+    "id": 4,
+    "text": "| Campo | Valor |\n| --- | --- |\n| I/O Voltage | 5V |\n| Input voltage (nominal) | 7-12V |\n| DC Current per I/O Pin | 20 mA |\n| Supported battery | 9V battery |\n| Power Supply Connector | Barrel Plug |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "especificaciones.md",
+      "section": "Power"
+    }
+  },
+  {
+    "id": 5,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Main Processor | ATmega2560 16 MHz |\n| USB-Serial Processor | ATmega16U2 16 MHz |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "especificaciones.md",
+      "section": "Clock speed"
+    }
+  },
+  {
+    "id": 6,
+    "text": "| Campo | Valor |\n| --- | --- |\n| ATmega2560 | 8KB SRAM, 256KB FLASH, 4KB EEPROM |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "especificaciones.md",
+      "section": "Memory"
+    }
+  },
+  {
+    "id": 7,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Weight | 37 g |\n| Width | 53.3 mm |\n| Length | 101.5 mm |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "especificaciones.md",
+      "section": "Dimensions"
+    }
+  },
+  {
+    "id": 8,
+    "text": "- Ubicación: armario C1.\n- Proyecto asignado: banco de ensayo de motores.\n- Kit de accesorios: KIT-MEGA-12.\n- Identificador interno de la prueba: LAB-B-MEGA-008.\n- Estado de disponibilidad: reservada para el banco de ensayo.\n- Responsable de seguimiento: equipo de automatización.\n- Prioridad de uso: pruebas de integración.\n- Documentación de apoyo asociada: registro del banco de ensayo (no incluido en este paquete).\n- Última revisión de inventario ficticia: 2026-09-03.\n- Observación de inventario: devolver al armario C1 al finalizar la reserva.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_laboratorio.md",
+      "section": "Ficha de laboratorio — Arduino® Mega 2560 Rev3"
+    }
+  },
+  {
+    "id": 9,
+    "text": "| Campo | Dato |\n| --- | --- |\n| Código de activo | ACT-MEGA-008 |\n| Serie de inventario | INV-2026-C1-008 |\n| Unidades registradas | 1 |\n| Estado físico registrado | preparada para el banco de ensayo |\n| Fecha de alta ficticia | 2025-11-07 |\n| Último préstamo interno | 2026-07-14 |\n| Fin previsto de la reserva actual | 2026-10-16 |\n| Persona solicitante registrada | grupo de validación de actuadores |\n| Canal de reserva | planificación semanal del banco |\n| Orden de trabajo asociada | OT-MOT-118 |\n| Etiqueta de proyecto | MOTO-ENS-26 |\n| Material complementario registrado | bandeja de identificación y carpeta de ensayos |\n| Estado de la documentación de apoyo | registro pendiente de consolidación al cierre de campaña |\n| Próxima comprobación de inventario ficticia | 2026-11-20 |\n| Nota de coordinación | mantener la reserva mientras esté activa la campaña de ensayo |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_laboratorio.md",
+      "section": "Registro de gestión"
+    }
+  },
+  {
+    "id": 10,
+    "text": "Arduino® Mega 2560 Rev3 is an exemplary development board dedicated for building extensive applications as compared to other maker boards by Arduino. The board accommodates the ATmega2560 microcontroller, which operates at a frequency of 16 MHz. The board contains 54 digital input/output pins, 16 analog inputs, 4 UARTs (hardware serial ports), a USB connection, a power jack, an ICSP header, and a reset button.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Description"
+    }
+  },
+  {
+    "id": 11,
+    "text": "3D Printing, Robotics, Maker",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Target Areas"
+    }
+  },
+  {
+    "id": 12,
+    "text": "- **ATmega2560 Processor**\n    - Up to 16 MIPS Throughput at 16MHz\n    - 256k bytes (of which 8k is used for the bootloader)\n    - 4k bytes EEPROM\n    - 8k bytes Internal SRAM\n    - 32 × 8 General Purpose Working Registers\n    - Real Time Counter with Separate Oscillator\n    - Four 8-bit PWM Channels\n    - Four Programmable Serial USART\n    - Controller/Peripheral SPI Serial Interface\n- **ATmega16U2**\n    - Up to 16 MIPS Throughput at 16 MHz\n    - 16k bytes ISP Flash Memory\n    - 512 bytes EEPROM\n    - 512 bytes SRAM\n    - USART with SPI master only mode and hardware flow control (RTS/CTS)\n    - Master/Slave SPI Serial Interface\n- **Sleep Modes**\n    - Idle\n    - ADC Noise Reduction\n    - Power-save\n    - Power-down\n    - Standby\n    - Extended Standby\n- **Power**\n    - USB Connection\n    - External AC/DC Adapter\n- **I/O**\n    - 54 Digital\n    - 16 Analog\n    - 15 PWM Output",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Features"
+    }
+  },
+  {
+    "id": 13,
+    "text": "Mega 2560 Rev3 is a successor board of Arduino Mega, it is dedicated to applications and projects that require large number of input output pins and the use cases which need high processing power. The Mega 2560 Rev3 comes with a much larger set of IOs when we compare it with the traditional Arduino® UNO board considering the form factor of both the boards.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "The Board"
+    }
+  },
+  {
+    "id": 14,
+    "text": "- **Robotics**: Featuring the high processing capacity, the Mega 2560 Rev3 can handle the extensive robotic applications. It is compatible with the motor controller shield that enables it to control multiple motors at an instance, thus making it perfect of robotic applications. The large number of I/O pins can accommodate many robotic sensors as well.\n  \n- **3D Printing**: Algorithms play a significant role in implementation of 3D printers. Mega 2560 Rev3 has the power to process these complex algorithms required for 3D printing. Additionally, the slight changes to the code is easily possible with the Arduino IDE and thus 3D printing programs can be customized according to user requirements.\n\n- **Wi-Fi**: Integrating wireless functionality enhances the utility of the applications. Mega 2560 Rev3 is compatible with Wi-Fi® shields hence allowing the wireless features for the applications in 3D printing and Robotics.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Application Examples"
+    }
+  },
+  {
+    "id": 15,
+    "text": "- Arduino® UNO R3\n- Arduino® Nano\n- Arduino® Due without headers",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Related Products"
+    }
+  },
+  {
+    "id": 16,
+    "text": "| Symbol          | Description                          | Min | Typ | Max | Unit |\n| --------------- | ------------------------------------ | --- | --- | --- | ---- |\n| V<sub>IN</sub>  | Input voltage from VIN pad / DC Jack | 7   | 7.0 | 12  | V    |\n| V<sub>USB</sub> | Input voltage from USB connector     | 4.8 | 5.0 | 5.5 | V    |\n| T<sub>OP</sub>  | Operating Temperature                | -40 | 25  | 85  | °C   |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Recommended Operating Conditions"
+    }
+  },
+  {
+    "id": 17,
+    "text": "![Arduino Mega 2560 Rev3 Block Diagram](./assets/Block_Diagram_Mega2560.png)",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Block Diagram"
+    }
+  },
+  {
+    "id": 18,
+    "text": "**Front View**\n\n![Arduino Mega 2560 Rev3 Top View](./assets/ArduinoMEGATopView.png)\n\n| **Ref.** | **Description**                  | **Ref.** | **Description**                  |\n| -------- | -------------------------------- | -------- | -------------------------------- |\n| USB      | USB B Connector                  | F1       | Chip Capacitor                   |\n| IC1      | 5V Linear Regulator              | X1       | Power Jack Connector             |\n| JP5      | Plated Holes                     | IC4      | ATmega16U2 chip                  |\n| PC1      | Electrolytic Alumninum Capacitor | PC2      | Electrolytic Alumninum Capacitor |\n| D1       | General Purpose Rectifier        | D3       | General Purpose Diode            |\n| L2       | Fixed Inductor                   | IC3      | ATmega2560 chip                  |\n| ICSP     | Connector Header                 | ON       | Green LED                        |\n| RN1      | Resistor Array                   | XIO      | Connector                        |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Board Topology"
+    }
+  },
+  {
+    "id": 19,
+    "text": "Primary processor of Mega 2560 Rev3 board is ATmega2560 chip which operates at a frequency of 16 MHz. It accommodates a large number of input and output lines which gives the provision of interfacing many external devices. At the same time the operations and processing is not slowed due to its significantly larger RAM than the other processors. The board also features a USB serial processor ATmega16U2 which acts an interface between the USB input signals and the main processor. This increases the flexibility of interfacing and connecting peripherals to the Mega 2560 Rev3 board.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Processor"
+    }
+  },
+  {
+    "id": 20,
+    "text": "![Power Tree](./assets/Power_Tree_Mega_2560_Rev2.svg)",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Power Tree"
+    }
+  },
+  {
+    "id": 21,
+    "text": "If you want to program your Mega 2560 Rev3 while offline you need to install the Arduino Desktop IDE **[1]** To connect the Mega 2560 Rev3 to your computer, you’ll need a Type-B USB cable. This also provides power to the board, as indicated by the LED.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Getting Started - IDE"
+    }
+  },
+  {
+    "id": 22,
+    "text": "All Arduino boards, including this one, work out-of-the-box on the Arduino Cloud Editor **[2]**, by just installing a simple plugin. \n\nThe Arduino Cloud Editor is hosted online, therefore it will always be up-to-date with the latest features and support for all boards. Follow **[3]** to start coding on the browser and upload your sketches onto your board.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Getting Started - Arduino Cloud Editor"
+    }
+  },
+  {
+    "id": 23,
+    "text": "Sample sketches for the Mega 2560 Rev3 can be found either in the “Examples” menu in the Arduino IDE or under the \"Documentation\" menu on the Arduino website [4].",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Sample Sketches"
+    }
+  },
+  {
+    "id": 24,
+    "text": "Now that you have gone through the basics of what you can do with the board you can explore the endless possibilities it provides by checking exciting projects on Arduino Project Hub **[5]**, the Arduino Library Reference **[6]** and the online store **[7]** where you will be able to complement your board with sensors, actuators and more.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Online Resources"
+    }
+  },
+  {
+    "id": 25,
+    "text": "![Arduino Mega 2560 Rev3 Pinout](./assets/ArduinoMEGAPinOut.png)",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Connector Pinouts"
+    }
+  },
+  {
+    "id": 26,
+    "text": "| Pin | Function | Type   | Description                                     |\n| --- | -------- | ------ | ----------------------------------------------- |\n| 1   | NC       | NC     | Not Connected                                   |\n| 2   | IOREF    | IOREF  | Reference for digital logic V - connected to 5V |\n| 3   | Reset    | Reset  | Reset                                           |\n| 4   | +3V3     | Power  | +3V3 Power Rail                                 |\n| 5   | +5V      | Power  | +5V Power Rail                                  |\n| 6   | GND      | Power  | Ground                                          |\n| 7   | GND      | Power  | Ground                                          |\n| 8   | VIN      | Power  | Voltage Input                                   |\n| 9   | A0       | Analog | Analog input 0 /GPIO                            |\n| 10  | A1       | Analog | Analog input 1 /GPIO                            |\n| 11  | A2       | Analog | Analog input 2 /GPIO                            |\n| 12  | A3       | Analog | Analog input 3 /GPIO                            |\n| 13  | A4       | Analog | Analog input 4 /GPIO                            |\n| 14  | A5       | Analog | Analog input 5 /GPIO                            |\n| 15  | A6       | Analog | Analog input 6 /GPIO                            |\n| 16  | A7       | Analog | Analog input 7 /GPIO                            |\n| 17  | A8       | Analog | Analog input 8 /GPIO                            |\n| 18  | A9       | Analog | Analog input 9 /GPIO                            |\n| 19  | A10      | Analog | Analog input 10 /GPIO                           |\n| 20  | A11      | Analog | Analog input 11 /GPIO                           |\n| 21  | A12      | Analog | Analog input 12 /GPIO                           |\n| 22  | A13      | Analog | Analog input 13 /GPIO                           |\n| 23  | A14      | Analog | Analog input 14 /GPIO                           |\n| 24  | A15      | Analog | Analog input 15 /GPIO                           |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Analog"
+    }
+  },
+  {
+    "id": 27,
+    "text": "| Pin | Function | Type              | Description                   |\n| --- | -------- | ----------------- | ----------------------------- |\n| 1   | D21/SCL  | Digital Input/I2C | Digital input 21/I2C Dataline |\n| 2   | D20/SDA  | Digital Input/I2C | Digital input 20/I2C Dataline |\n| 3   | AREF     | Digital           | Analog Reference Voltage      |\n| 4   | GND      | Power             | Ground                        |\n| 5   | D13      | Digital/GPIO      | Digital input 13/GPIO         |\n| 6   | D12      | Digital/GPIO      | Digital input 12/GPIO         |\n| 7   | D11      | Digital/GPIO      | Digital input 11/GPIO         |\n| 8   | D10      | Digital/GPIO      | Digital input 10/GPIO         |\n| 9   | D9       | Digital/GPIO      | Digital input 9/GPIO          |\n| 10  | D8       | Digital/GPIO      | Digital input 8/GPIO          |\n| 11  | D7       | Digital/GPIO      | Digital input 7/GPIO          |\n| 12  | D6       | Digital/GPIO      | Digital input 6/GPIO          |\n| 13  | D5       | Digital/GPIO      | Digital input 5/GPIO          |\n| 14  | D4       | Digital/GPIO      | Digital input 4/GPIO          |\n| 15  | D3       | Digital/GPIO      | Digital input 3/GPIO          |\n| 16  | D2       | Digital/GPIO      | Digital input 2/GPIO          |\n| 17  | D1/TX0   | Digital/GPIO      | Digital input 1 /GPIO         |\n| 18  | D0/Tx1   | Digital/GPIO      | Digital input 0 /GPIO         |\n| 19  | D14      | Digital/GPIO      | Digital input 14 /GPIO        |\n| 20  | D15      | Digital/GPIO      | Digital input 15 /GPIO        |\n| 21  | D16      | Digital/GPIO      | Digital input 16 /GPIO        |\n| 22  | D17      | Digital/GPIO      | Digital input 17 /GPIO        |\n| 23  | D18      | Digital/GPIO      | Digital input 18 /GPIO        |\n| 24  | D19      | Digital/GPIO      | Digital input 19 /GPIO        |\n| 25  | D20      | Digital/GPIO      | Digital input 20 /GPIO        |\n| 26  | D21      | Digital/GPIO      | Digital input 21 /GPIO        |\n\n![Arduino Mega 2560 Rev3 Pinout](./assets/ArduinoMEGAPinOut2.png)",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Digital"
+    }
+  },
+  {
+    "id": 28,
+    "text": "| Pin | Function | Type     | Description       |\n| --- | -------- | -------- | ----------------- |\n| 1   | PB4      | Internal | Serial Wire Debug |\n| 2   | PB6      | Internal | Serial Wire Debug |\n| 3   | PB5      | Internal | Serial Wire Debug |\n| 4   | PB7      | Internal | Serial Wire Debug |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "ATMEGA16U2 JP5"
+    }
+  },
+  {
+    "id": 29,
+    "text": "| Pin | Function | Type     | Description                  |\n| --- | -------- | -------- | ---------------------------- |\n| 1   | CIPO     | Internal | Controller In Peripheral Out |\n| 2   | +5V      | Internal | Power Supply of 5V           |\n| 3   | SCK      | Internal | Serial Clock                 |\n| 4   | COPI     | Internal | Controller Out Peripheral In |\n| 5   | RESET    | Internal | Reset                        |\n| 6   | GND      | Internal | Ground                       |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "ATMEGA16U2 ICSP1"
+    }
+  },
+  {
+    "id": 30,
+    "text": "| Pin | Function | Type    | Description           |\n| --- | -------- | ------- | --------------------- |\n| 1   | +5V      | Power   | Power Supply of 5V    |\n| 2   | D22      | Digital | Digital input 22/GPIO |\n| 3   | D24      | Digital | Digital input 24/GPIO |\n| 4   | D26      | Digital | Digital input 26/GPIO |\n| 5   | D28      | Digital | Digital input 28/GPIO |\n| 6   | D30      | Digital | Digital input 30/GPIO |\n| 7   | D32      | Digital | Digital input 32/GPIO |\n| 8   | D34      | Digital | Digital input 34/GPIO |\n| 9   | D36      | Digital | Digital input 36/GPIO |\n| 10  | D38      | Digital | Digital input 38/GPIO |\n| 11  | D40      | Digital | Digital input 40/GPIO |\n| 12  | D42      | Digital | Digital input 42/GPIO |\n| 13  | D44      | Digital | Digital input 44/GPIO |\n| 14  | D46      | Digital | Digital input 46/GPIO |\n| 15  | D48      | Digital | Digital input 48/GPIO |\n| 16  | D50      | Digital | Digital input 50/GPIO |\n| 17  | D52      | Digital | Digital input 52/GPIO |\n| 18  | GND      | Power   | Ground                |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Digital Pins D22 - D53 LHS"
+    }
+  },
+  {
+    "id": 31,
+    "text": "| Pin | Function | Type    | Description           |\n| --- | -------- | ------- | --------------------- |\n| 1   | +5V      | Power   | Power Supply of 5V    |\n| 2   | D23      | Digital | Digital input 23/GPIO |\n| 3   | D25      | Digital | Digital input 25/GPIO |\n| 4   | D27      | Digital | Digital input 27/GPIO |\n| 5   | D29      | Digital | Digital input 29/GPIO |\n| 6   | D31      | Digital | Digital input 31/GPIO |\n| 7   | D33      | Digital | Digital input 33/GPIO |\n| 8   | D35      | Digital | Digital input 35/GPIO |\n| 9   | D37      | Digital | Digital input 37/GPIO |\n| 10  | D39      | Digital | Digital input 39/GPIO |\n| 11  | D41      | Digital | Digital input 41/GPIO |\n| 12  | D43      | Digital | Digital input 43/GPIO |\n| 13  | D45      | Digital | Digital input 45/GPIO |\n| 14  | D47      | Digital | Digital input 47/GPIO |\n| 15  | D49      | Digital | Digital input 49/GPIO |\n| 16  | D51      | Digital | Digital input 51/GPIO |\n| 17  | D53      | Digital | Digital input 53/GPIO |\n| 18  | GND      | Power   | Ground                |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Digital Pins D22 - D53 RHS"
+    }
+  },
+  {
+    "id": 32,
+    "text": "![Arduino Mega 2560 Rev3 Outline](./assets/ArduinoMEGAOutline.png)",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Board Outline"
+    }
+  },
+  {
+    "id": 33,
+    "text": "![Arduino Mega 2560 Rev3 Mount Holes](./assets/ArduinoMEGAMountHoles.png)",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Board Mount Holes"
+    }
+  },
+  {
+    "id": 34,
+    "text": "We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Declaration of Conformity CE DoC (EU)"
+    }
+  },
+  {
+    "id": 35,
+    "text": "Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. \n\n| **Substance**                          | **Maximum Limit (ppm)** |\n| -------------------------------------- | ----------------------- |\n| Lead (Pb)                              | 1000                    |\n| Cadmium (Cd)                           | 100                     |\n| Mercury (Hg)                           | 1000                    |\n| Hexavalent Chromium (Cr6+)             | 1000                    |\n| Poly Brominated Biphenyls (PBB)        | 1000                    |\n| Poly Brominated Diphenyl ethers (PBDE) | 1000                    |\n| Bis(2-Ethylhexyl} phthalate (DEHP)     | 1000                    |\n| Benzyl butyl phthalate (BBP)           | 1000                    |\n| Dibutyl phthalate (DBP)                | 1000                    |\n| Diisobutyl phthalate (DIBP)            | 1000                    |\n\nExemptions : No exemptions are claimed. \n\nArduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the \"Authorization List\" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Declaration of Conformity to EU RoHS & REACH 211 01/19/2021"
+    }
+  },
+  {
+    "id": 36,
+    "text": "As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Conflict Minerals Declaration"
+    }
+  },
+  {
+    "id": 37,
+    "text": "Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.\n\nThis device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: \n\n(1) This device may not cause harmful interference\n\n(2) this device must accept any interference received, including interference that may cause undesired operation.\n\n**FCC RF Radiation Exposure Statement:**\n\n1. This Transmitter must not be co-located or operating in conjunction with any other antenna or transmitter.\n\n2. This equipment complies with RF radiation exposure limits set forth for an uncontrolled environment.\n\n3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.\n\nEnglish: \nUser manuals for licence-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada licence-exempt RSS standard(s). Operation is subject to the following two conditions:\n\n(1) this device may not cause interference\n\n(2) this device must accept any interference, including interference that may cause undesired operation of the device.\n\nFrench: \nLe présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :\n\n(1) l’ appareil nedoit pas produire de brouillage\n\n(2) l’utilisateur de l’appareil doit accepter tout brouillage radioélectrique subi, même si le brouillage est susceptible d’en compromettre le fonctionnement.\n\n**IC SAR Warning:**\n\nEnglish \nThis equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  \n\nFrench: \nLors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.\n\n**Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.\n\nHereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 201453/EU. This product is allowed to be used in all EU member states.",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "FCC Caution"
+    }
+  },
+  {
+    "id": 38,
+    "text": "| Company name    | Arduino S.r.l.                                            |\n| --------------- | --------------------------------------------------------- |\n| Company Address | Arduino SRL, Via Andrea Appiani 25, 20900 Monza MB, Italy |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Company Information"
+    }
+  },
+  {
+    "id": 39,
+    "text": "| Ref                                    | Link                                                                     |\n| -------------------------------------- | ------------------------------------------------------------------------ |\n| Arduino IDE (Desktop)                  | https://www.arduino.cc/en/Main/Software                                  |\n| Arduino Cloud Editor                   | https://create.arduino.cc/editor                                         |\n| Arduino Cloud Editor - Getting Started | https://docs.arduino.cc/arduino-cloud/guides/editor/                     |\n| Arduino Website                        | https://www.arduino.cc/                                                  |\n| Arduino Project Hub                    | https://create.arduino.cc/projecthub?by=part&part_id=11332&sort=trending |\n| Library Reference                      | https://www.arduino.cc/reference/en/libraries/                           |\n| Online Store                           | https://store.arduino.cc/                                                |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Reference Documentation"
+    }
+  },
+  {
+    "id": 40,
+    "text": "| **Date**   | **Revision** | **Changes**                              |\n| ---------- | ------------ | ---------------------------------------- |\n| 25/04/2024 | 3            | Updated link to new Cloud Editor         |\n| 09/10/2023 | 2            | Updated recommended operating conditions |\n| 29/09/2020 | 1            | First Release                            |",
+    "metadata": {
+      "board": "MEGA",
+      "source": "ficha_tecnica.md",
+      "section": "Revision History"
+    }
+  },
+  {
+    "id": 41,
+    "text": "**Fuente:** `tech-specs.yml` oficial de Arduino, convertido sin modificar valores ni unidades.",
+    "metadata": {
+      "board": "UNO",
+      "source": "especificaciones.md",
+      "section": "Especificaciones técnicas"
+    }
+  },
+  {
+    "id": 42,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Name | Arduino UNO R3 |\n| SKU | A000066 |\n\n| Microcontroller | ATmega328P |\n\n| USB connector | USB-B |",
+    "metadata": {
+      "board": "UNO",
+      "source": "especificaciones.md",
+      "section": "Board"
+    }
+  },
+  {
+    "id": 43,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Built-in LED Pin | 13 |\n| Digital I/O Pins | 14 |\n| Analog input pins | 6 |\n| PWM pins | 6 |",
+    "metadata": {
+      "board": "UNO",
+      "source": "especificaciones.md",
+      "section": "Pins"
+    }
+  },
+  {
+    "id": 44,
+    "text": "| Campo | Valor |\n| --- | --- |\n| UART | True |\n| I2C | True |\n| SPI | True |",
+    "metadata": {
+      "board": "UNO",
+      "source": "especificaciones.md",
+      "section": "Communication"
+    }
+  },
+  {
+    "id": 45,
+    "text": "| Campo | Valor |\n| --- | --- |\n| I/O Voltage | 5V |\n| Input voltage (nominal) | 7-12V |\n| DC Current per I/O Pin | 20 mA |\n| Power Supply Connector | Barrel Plug |",
+    "metadata": {
+      "board": "UNO",
+      "source": "especificaciones.md",
+      "section": "Power"
+    }
+  },
+  {
+    "id": 46,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Main Processor | ATmega328P 16 MHz |\n| USB-Serial Processor | ATmega16U2 16 MHz |",
+    "metadata": {
+      "board": "UNO",
+      "source": "especificaciones.md",
+      "section": "Clock speed"
+    }
+  },
+  {
+    "id": 47,
+    "text": "| Campo | Valor |\n| --- | --- |\n| ATmega328P | 2KB SRAM, 32KB FLASH, 1KB EEPROM |",
+    "metadata": {
+      "board": "UNO",
+      "source": "especificaciones.md",
+      "section": "Memory"
+    }
+  },
+  {
+    "id": 48,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Weight | 25 g |\n| Width | 53.4 mm |\n| Length | 68.6 mm |",
+    "metadata": {
+      "board": "UNO",
+      "source": "especificaciones.md",
+      "section": "Dimensions"
+    }
+  },
+  {
+    "id": 49,
+    "text": "- Ubicación: armario B2.\n- Proyecto asignado: demostrador de iluminación.\n- Kit de accesorios: KIT-UNO-07.\n- Identificador interno de la prueba: LAB-A-UNO-014.\n- Estado de disponibilidad: asignada al proyecto indicado.\n- Responsable de seguimiento: equipo de prototipado.\n- Prioridad de uso: demostraciones internas.\n- Documentación de apoyo asociada: guía de montaje del demostrador (no incluida en este paquete).\n- Última revisión de inventario ficticia: 2026-09-01.\n- Observación de inventario: conservar con su kit de accesorios asignado.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_laboratorio.md",
+      "section": "Ficha de laboratorio — Arduino® UNO R3"
+    }
+  },
+  {
+    "id": 50,
+    "text": "| Campo | Dato |\n| --- | --- |\n| Código de activo | ACT-UNO-014 |\n| Serie de inventario | INV-2026-B2-014 |\n| Unidades registradas | 1 |\n| Estado físico registrado | sin incidencias abiertas |\n| Fecha de alta ficticia | 2026-01-18 |\n| Último préstamo interno | 2026-08-26 |\n| Devolución prevista de la asignación actual | 2026-10-02 |\n| Persona solicitante registrada | grupo de experiencia de usuario |\n| Canal de reserva | calendario de laboratorio |\n| Orden de trabajo asociada | OT-ILU-042 |\n| Etiqueta de proyecto | ILUM-DEM-26 |\n| Material complementario registrado | difusor óptico y soporte de sobremesa |\n| Estado de la documentación de apoyo | pendiente de revisión por el equipo de prototipado |\n| Próxima comprobación de inventario ficticia | 2026-12-01 |\n| Nota de coordinación | confirmar disponibilidad con el responsable antes de reasignarla |",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_laboratorio.md",
+      "section": "Registro de gestión"
+    }
+  },
+  {
+    "id": 51,
+    "text": "The Arduino® UNO R3 is the perfect board to get familiar with electronics and coding. This versatile development board is equipped with the well-known ATmega328P and the ATMega 16U2 Processor.  \n\nThis board will give you a great first experience within the world of Arduino.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Description"
+    }
+  },
+  {
+    "id": 52,
+    "text": "Maker, introduction, industries",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Target areas:"
+    }
+  },
+  {
+    "id": 53,
+    "text": "* **ATMega328P** Processor\n    * **Memory**\n        * AVR CPU at up to 16 MHz\n        * 32 kB Flash\n        * 2 kB SRAM\n        * 1 kB EEPROM \n\n    * **Security**\n        * Power On Reset (POR) \n        * Brown Out Detection (BOD) \n\n    * **Peripherals**\n        * 2x 8-bit Timer/Counter with a dedicated period register and compare channels\n        * 1x 16-bit Timer/Counter with a dedicated period register, input capture and compare channels\n        * 1x USART with fractional baud rate generator and start-of-frame detection\n        * 1x controller/peripheral Serial Peripheral Interface (SPI)\n        * 1x Dual mode controller/peripheral I2C\n        * 1x Analog Comparator (AC) with a scalable reference input\n        * Watchdog Timer with separate on-chip oscillator\n        * Six PWM channels\n        * Interrupt and wake-up on pin change\n\n    * **ATMega16U2 Processor**\n        *  8-bit AVR® RISC-based microcontroller \n\n    * **Memory**\n        * 16 kB ISP Flash\n        * 512B EEPROM\n        * 512B SRAM\n        * debugWIRE interface for on-chip debugging and programming \n\n    * **Power**\n        * 2.7-5.5 volts",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Features"
+    }
+  },
+  {
+    "id": 54,
+    "text": "The UNO board is the flagship product of Arduino. Regardless if you are new to the world of electronics or will use the UNO R3 as a tool for education purposes or industry-related tasks, the UNO R3 is likely to meet your needs.  \n\n**First entry to electronics:** If this is your first project within coding and electronics, get started with our most used and documented board; UNO. It is equipped with the well-known ATmega328P processor, 14 digital input/output pins, 6 analog inputs, USB connections, ICSP header and reset button. This board includes everything you will need for a great first experience with Arduino. \n\n**Industry-standard development board:** Using the UNO R3 board in industries, there are a range of companies using the UNO R3 board as the brain for their PLC’s.\n\n**Education purposes:** Although the UNO R3 board has been with us for about ten years, it is still widely used for various education purposes and scientific projects. The board's high standard and top quality performance makes it a great resource to capture real time from sensors and to trigger complex laboratory equipment to mention a few examples.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Application Examples"
+    }
+  },
+  {
+    "id": 55,
+    "text": "* Arduino Starter Kit\n* Arduino UNO R4 Minima\n* Arduino UNO R4 WiFi\n* Tinkerkit Braccio Robot",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Related Products"
+    }
+  },
+  {
+    "id": 56,
+    "text": "| Symbol | Description                                      | Min            | Max            |\n| ------ | ------------------------------------------------ | -------------- | -------------- |\n|        | Conservative thermal limits for the whole board: | -40 °C (-40 °F) | 85 °C ( 185 °F) |\n\n>**NOTE:** In extreme temperatures, EEPROM, voltage regulator, and the crystal oscillator, might not work as expected.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Recommended Operating Conditions"
+    }
+  },
+  {
+    "id": 57,
+    "text": "| Symbol  | Description                              | Min  | Typ  | Max  | Unit |\n| ------- | ---------------------------------------- | ---- | ---- | ---- | ---- |\n| VINMax  | Maximum input voltage from VIN pad       | 6    | -    | 20   | V    |\n| VUSBMax | Maximum input voltage from USB connector |      | -    | 5.5  | V    |\n| PMax    | Maximum Power Consumption                | -    | -    | xx   | mA   |",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Power Consumption"
+    }
+  },
+  {
+    "id": 58,
+    "text": "Top view\n\n![Board topology](assets/boardTopology.png)\n\n| **Ref.** | **Description**                | **Ref.** | **Description**                       |\n| -------- | ------------------------------ | -------- | ------------------------------------- |\n| X1       | Power jack 2.1x5.5mm           | U1       | SPX1117M3-L-5 Regulator               |\n| X2       | USB B Connector                | U3       | ATMEGA16U2 Module                     |\n| PC1      | EEE-1EA470WP 25V SMD Capacitor | U5       | LMV358LIST-A.9 IC                     |\n| PC2      | EEE-1EA470WP 25V SMD Capacitor | F1       | Chip Capacitor, High Density          |\n| D1       | CGRA4007-G Rectifier           | ICSP     | Pin header connector (through hole 6) |\n| J-ZU4    | ATMEGA328P Module              | ICSP1    | Pin header connector (through hole 6) |\n| Y1       | ECS-160-20-4X-DU Oscillator    |          |                                       |",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Board Topology"
+    }
+  },
+  {
+    "id": 59,
+    "text": "The Main Processor is a ATmega328P running at up to 20 MHz. Most of its pins are connected to the external headers, however some are reserved for internal communication with the USB Bridge coprocessor.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Processor"
+    }
+  },
+  {
+    "id": 60,
+    "text": "![Power tree](assets/powerTree.png)",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Power Tree"
+    }
+  },
+  {
+    "id": 61,
+    "text": "If you want to program your UNO R3 while offline you need to install the Arduino Desktop IDE [1] To connect the UNO R3 to your computer, you’ll need a USB-B cable. This also provides power to the board, as indicated by the LED.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Getting Started - IDE"
+    }
+  },
+  {
+    "id": 62,
+    "text": "All Arduino boards, including this one, work out-of-the-box on the Arduino Cloud Editor [2], by just installing a simple plugin.\n\nThe Arduino Cloud Editor is hosted online, therefore it will always be up-to-date with the latest features and support for all boards. Follow **[3]** to start coding on the browser and upload your sketches onto your board.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Getting Started - Arduino Cloud Editor"
+    }
+  },
+  {
+    "id": 63,
+    "text": "Sample sketches for the UNO R3 can be found either in the “Examples” menu in the Arduino IDE or in the “Documentation” section of the [Arduino website](https://www.arduino.cc/) [4].",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Sample Sketches"
+    }
+  },
+  {
+    "id": 64,
+    "text": "Now that you have gone through the basics of what you can do with the board you can explore the endless possibilities it provides by checking exciting projects on Arduino Project Hub [5], the Arduino Library Reference [6] and the online Arduino store [7] where you will be able to complement your board with sensors, actuators and more.\n\n<div style=\"page-break-after:always;\"></div>",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Online Resources"
+    }
+  },
+  {
+    "id": 65,
+    "text": "![Pinout](assets/pinout.png)",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Connector Pinouts"
+    }
+  },
+  {
+    "id": 66,
+    "text": "| Pin  | **Function** | **Type**         | **Description**                                 |\n| ---- | ------------ | ---------------- | ----------------------------------------------- |\n| 1    | NC           | NC               | Not connected                                   |\n| 2    | IOREF        | IOREF            | Reference for digital logic V - connected to 5V |\n| 3    | Reset        | Reset            | Reset                                           |\n| 4    | +3V3         | Power            | +3V3 Power Rail                                 |\n| 5    | +5V          | Power            | +5V Power Rail                                  |\n| 6    | GND          | Power            | Ground                                          |\n| 7    | GND          | Power            | Ground                                          |\n| 8    | VIN          | Power            | Voltage Input                                   |\n| 9    | A0           | Analog/GPIO      | Analog input 0 /GPIO                            |\n| 10   | A1           | Analog/GPIO      | Analog input 1 /GPIO                            |\n| 11   | A2           | Analog/GPIO      | Analog input 2 /GPIO                            |\n| 12   | A3           | Analog/GPIO      | Analog input 3 /GPIO                            |\n| 13   | A4/SDA       | Analog input/I2C | Analog input 4/I2C Data line                    |\n| 14   | A5/SCL       | Analog input/I2C | Analog input 5/I2C Clock line                   |",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "JANALOG"
+    }
+  },
+  {
+    "id": 67,
+    "text": "| Pin  | **Function** | **Type**     | **Description**                            |\n| ---- | ------------ | ------------ | ------------------------------------------ |\n| 1    | D0           | Digital/GPIO | Digital pin 0/GPIO                         |\n| 2    | D1           | Digital/GPIO | Digital pin 1/GPIO                         |\n| 3    | D2           | Digital/GPIO | Digital pin 2/GPIO                         |\n| 4    | D3           | Digital/GPIO | Digital pin 3/GPIO                         |\n| 5    | D4           | Digital/GPIO | Digital pin 4/GPIO                         |\n| 6    | D5           | Digital/GPIO | Digital pin 5/GPIO                         |\n| 7    | D6           | Digital/GPIO | Digital pin 6/GPIO                         |\n| 8    | D7           | Digital/GPIO | Digital pin 7/GPIO                         |\n| 9    | D8           | Digital/GPIO | Digital pin 8/GPIO                         |\n| 10   | D9           | Digital/GPIO | Digital pin 9/GPIO                         |\n| 11   | SS           | Digital      | SPI Chip Select                            |\n| 12   | MOSI         | Digital      | SPI1 Main Out Secondary In                 |\n| 13   | MISO         | Digital      | SPI Main In Secondary Out                  |\n| 14   | SCK          | Digital      | SPI serial clock output                    |\n| 15   | GND          | Power        | Ground                                     |\n| 16   | AREF         | Digital      | Analog reference voltage                   |\n| 17   | A4/SD4       | Digital      | Analog input 4/I2C Data line (duplicated)  |\n| 18   | A5/SD5       | Digital      | Analog input 5/I2C Clock line (duplicated) |\n\n<div style=\"page-break-after:always;\"></div>",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "JDIGITAL"
+    }
+  },
+  {
+    "id": 68,
+    "text": "![Board outline](assets/boardOutline.png)",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Board Outline & Mounting Holes"
+    }
+  },
+  {
+    "id": 69,
+    "text": "We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). \n\n|                                                         |                                                   |\n| ------------------------------------------------------- | ------------------------------------------------- |\n| **ROHS 2 Directive 2011/65/EU**                         |                                                   |\n| Conforms to:                                            | EN50581:2012                                      |\n| **Directive 2014/35/EU. (LVD)**                         |                                                   |\n| Conforms to:                                            | EN 60950-1:2006/A11:2009/A1:2010/A12:2011/AC:2011 |\n| **Directive 2004/40/EC & 2008/46/EC & 2013/35/EU, EMF** |                                                   |\n| Conforms to:                                            | EN 62311:2008                                     |",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Declaration of Conformity CE DoC (EU)"
+    }
+  },
+  {
+    "id": 70,
+    "text": "Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. \n\n| Substance                              | **Maximum limit (ppm)** |\n| -------------------------------------- | ----------------------- |\n| Lead (Pb)                              | 1000                    |\n| Cadmium (Cd)                           | 100                     |\n| Mercury (Hg)                           | 1000                    |\n| Hexavalent Chromium (Cr6+)             | 1000                    |\n| Poly Brominated Biphenyls (PBB)        | 1000                    |\n| Poly Brominated Diphenyl ethers (PBDE) | 1000                    |\n| Bis(2-Ethylhexyl} phthalate (DEHP)     | 1000                    |\n| Benzyl butyl phthalate (BBP)           | 1000                    |\n| Dibutyl phthalate (DBP)                | 1000                    |\n| Diisobutyl phthalate (DIBP)            | 1000                    |\n\nExemptions: No exemptions are claimed. \n\nArduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the \"Authorization List\" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Declaration of Conformity to EU RoHS & REACH 211 01/19/2021"
+    }
+  },
+  {
+    "id": 71,
+    "text": "As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Conflict Minerals Declaration"
+    }
+  },
+  {
+    "id": 72,
+    "text": "Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.\n\nThis device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: \n\n(1) This device may not cause harmful interference\n\n (2) this device must accept any interference received, including interference that may cause undesired operation.\n\n**FCC RF Radiation Exposure Statement:**\n\n1. This Transmitter must not be co-located or operating in conjunction with any other antenna or transmitter.\n\n2. This equipment complies with RF radiation exposure limits set forth for an uncontrolled environment.\n\n3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.\n\nEnglish: \nUser manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:\n\n(1) this device may not cause interference\n\n (2) this device must accept any interference, including interference that may cause undesired operation of the device.\n\nFrench: \nLe présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :\n\n(1) l’ appareil nedoit pas produire de brouillage\n\n(2) l’utilisateur de l’appareil doit accepter tout brouillage radioélectrique subi, même si le brouillage est susceptible d’en compromettre le fonctionnement.\n\n**IC SAR Warning:**\n\nEnglish \nThis equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  \n\nFrench: \nLors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.\n\n**Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.\n\nHereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "FCC Caution"
+    }
+  },
+  {
+    "id": 73,
+    "text": "| Company name    | Arduino S.r.l                           |\n| --------------- | --------------------------------------- |\n| Company Address | Via Andrea Appiani 25 20900 MONZA Italy |",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Company Information"
+    }
+  },
+  {
+    "id": 74,
+    "text": "| Reference                              | **Link**                                                                 |\n| -------------------------------------- | ------------------------------------------------------------------------ |\n| Arduino IDE (Desktop)                  | https://www.arduino.cc/en/Main/Software                                  |\n| Arduino Cloud Editor                   | https://create.arduino.cc/editor                                         |\n| Arduino Cloud Editor - Getting Started | https://docs.arduino.cc/arduino-cloud/guides/editor/                     |\n| Arduino Website                        | https://www.arduino.cc/                                                  |\n| Arduino Project Hub                    | https://create.arduino.cc/projecthub?by=part&part_id=11332&sort=trending |\n| Library Reference                      | https://www.arduino.cc/reference/en/                                     |\n| Arduino Store                          | https://store.arduino.cc/                                                |",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Reference Documentation"
+    }
+  },
+  {
+    "id": 75,
+    "text": "| Date       | **Revision** | **Changes**                      |\n| ---------- | ------------ | -------------------------------- |\n| 25/04/2024 | 3            | Updated link to new Cloud Editor |\n| 26/07/2023 | 2            | General Update                   |\n| 06/2021    | 1            | Datasheet release                |\n\n> **Nota editorial de preparación:** la ficha técnica indica que el procesador principal puede funcionar hasta 20 MHz, mientras que `especificaciones.md` fija el procesador principal en 16 MHz. Se conserva la discrepancia de la fuente; no la trates como una respuesta inequívoca.",
+    "metadata": {
+      "board": "UNO",
+      "source": "ficha_tecnica.md",
+      "section": "Revision History"
+    }
+  },
+  {
+    "id": 76,
+    "text": "**Fuente:** `tech-specs.yml` oficial de Arduino, convertido sin modificar valores ni unidades.",
+    "metadata": {
+      "board": "NANO",
+      "source": "especificaciones.md",
+      "section": "Especificaciones técnicas"
+    }
+  },
+  {
+    "id": 77,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Name | Arduino® Nano |\n| SKU | A000005 |\n\n| Microcontroller | ATmega328 |\n\n| USB connector | Mini-B USB |",
+    "metadata": {
+      "board": "NANO",
+      "source": "especificaciones.md",
+      "section": "Board"
+    }
+  },
+  {
+    "id": 78,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Built-in LED Pin | 13 |\n| Digital I/O Pins | 14 |\n| Analog input pins | 8 |\n| PWM pins | 6 |",
+    "metadata": {
+      "board": "NANO",
+      "source": "especificaciones.md",
+      "section": "Pins"
+    }
+  },
+  {
+    "id": 79,
+    "text": "| Campo | Valor |\n| --- | --- |\n| UART | RX/TX |\n| I2C | A4 (SDA), A5 (SCL) |\n| SPI | D11 (COPI), D12 (CIPO), D13 (SCK). Use any GPIO for Chip Select (CS). |",
+    "metadata": {
+      "board": "NANO",
+      "source": "especificaciones.md",
+      "section": "Communication"
+    }
+  },
+  {
+    "id": 80,
+    "text": "| Campo | Valor |\n| --- | --- |\n| I/O Voltage | 5V |\n| Input voltage (nominal) | 7-12V |\n| DC Current per I/O Pin | 20 mA |",
+    "metadata": {
+      "board": "NANO",
+      "source": "especificaciones.md",
+      "section": "Power"
+    }
+  },
+  {
+    "id": 81,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Processor | ATmega328 16 MHz |",
+    "metadata": {
+      "board": "NANO",
+      "source": "especificaciones.md",
+      "section": "Clock speed"
+    }
+  },
+  {
+    "id": 82,
+    "text": "| Campo | Valor |\n| --- | --- |\n| ATmega328P | 2KB SRAM, 32KB Flash, 1KB EEPROM |",
+    "metadata": {
+      "board": "NANO",
+      "source": "especificaciones.md",
+      "section": "Memory"
+    }
+  },
+  {
+    "id": 83,
+    "text": "| Campo | Valor |\n| --- | --- |\n| Weight | 7 g |\n| Width | 18 mm |\n| Length | 45 mm |",
+    "metadata": {
+      "board": "NANO",
+      "source": "especificaciones.md",
+      "section": "Dimensions"
+    }
+  },
+  {
+    "id": 84,
+    "text": "- Ubicación: cajón A4.\n- Proyecto asignado: módulo portátil de adquisición.\n- Kit de accesorios: KIT-NANO-03.\n- Identificador interno de la prueba: LAB-C-NANO-021.\n- Estado de disponibilidad: disponible para préstamo interno.\n- Responsable de seguimiento: equipo de instrumentación.\n- Prioridad de uso: prototipos portátiles.\n- Documentación de apoyo asociada: ficha de préstamo interno (no incluida en este paquete).\n- Última revisión de inventario ficticia: 2026-09-05.\n- Observación de inventario: registrar el préstamo en la ficha asociada.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_laboratorio.md",
+      "section": "Ficha de laboratorio — Arduino® Nano"
+    }
+  },
+  {
+    "id": 85,
+    "text": "| Campo | Dato |\n| --- | --- |\n| Código de activo | ACT-NANO-021 |\n| Serie de inventario | INV-2026-A4-021 |\n| Unidades registradas | 1 |\n| Estado físico registrado | disponible y sin incidencias abiertas |\n| Fecha de alta ficticia | 2026-02-11 |\n| Último préstamo interno | 2026-08-19 |\n| Fecha máxima del próximo préstamo | 2026-10-09 |\n| Persona solicitante registrada | grupo de adquisición portátil |\n| Canal de reserva | formulario de préstamo interno |\n| Orden de trabajo asociada | OT-ADQ-073 |\n| Etiqueta de proyecto | PORT-ADQ-26 |\n| Material complementario registrado | estuche de transporte y etiqueta de custodia |\n| Estado de la documentación de apoyo | ficha de préstamo disponible para el responsable |\n| Próxima comprobación de inventario ficticia | 2026-12-12 |\n| Nota de coordinación | actualizar la ficha de préstamo al cambiar de custodio |",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_laboratorio.md",
+      "section": "Registro de gestión"
+    }
+  },
+  {
+    "id": 86,
+    "text": "**Arduino® Nano** is an intelligent development board designed for building faster prototypes with the smallest dimension. Arduino Nano being the oldest member of the Nano family, provides enough interfaces for your breadboard-friendly applications. At the heart of the board is **ATmega328 microcontroller** clocked at a frequency of 16 MHz featuring more or less the same functionalities as the Arduino® Duemilanove. The board offers 20 digital input/output pins, 8 analog pins, and a mini-USB port.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Description"
+    }
+  },
+  {
+    "id": 87,
+    "text": "Maker, Security, Environmental, Robotics and Control Systems",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Target Areas"
+    }
+  },
+  {
+    "id": 88,
+    "text": "- **ATmega328** Microcontroller\n  - High-performance low-power 8-bit processor\n  - Achieve up to 16 MIPS for 16 MHz clock frequency\n  - 32 kB of which 2 KB used by bootloader\n  - 2 kB internal SRAM\n  - 1 kB EEPROM\n  - 32 x 8 General Purpose Working Registers\n  - Real Time Counter with Separate Oscillator\n  - Six PWM Channels\n  - Programmable Serial USART\n  - Master/Slave SPI Serial Interface\n- **Power**\n  - Mini-B USB connection\n  - 7-15V unregulated external power supply (pin 30)\n  - 5V regulated external power supply (pin 27)\n- **Sleep Modes**\n  - Idle\n  - ADC Noise Reduction\n  - Power-save\n  - Power-down\n  - Standby\n  - Extended Standby\n- **I/O**\n  - 20 Digital\n  - 8 Analog\n  - 6 PWM Output",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Features"
+    }
+  },
+  {
+    "id": 89,
+    "text": "Arduino Nano is the first embedded microcontroller in the Nano series with minimum functionalities, designed for mini projects from the maker community. With a large number of input/output pins gives the advantage of utilizing several serial communications like UART, SPI and I2C. The hardware is compatible with Arduino IDE, Arduino CLI and Cloud Editor.\n\n**Security**: The high-performance and low-power capabilities gives the chance to develop security based applications like access control systems using fingerprint sensors. The flexibility to interface sensors and external devices using serial communication has improved the scope of utility.\n\n**Environmental**: The low-power feature of the microcontroller and the power supply options for the board has enhanced the ability to implement remote IoT projects related to environmental issues.\n\n**Robotics**: Robotics has always been the favorite area of exploration for the Maker community and with this tiny embedded hardware you can now create complex and advanced robotic applications.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Application Examples"
+    }
+  },
+  {
+    "id": 90,
+    "text": "- Arduino® Nano 33 BLE (SKU: ABX00030)\n- Arduino® 33 IoT (SKU: ABX00027)\n- Arduino® Micro (SKU: A000093)",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Related Products"
+    }
+  },
+  {
+    "id": 91,
+    "text": "| Symbol | Description                                       | Min        | Max     |\n| ------ | ------------------------------------------------- | ---------- | ------- | \n|        |  Conservative thermal limits for the whole board: |  -40 °C    | 85 °C   |",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Recommended Operating Conditions"
+    }
+  },
+  {
+    "id": 92,
+    "text": "| Symbol          | Description                         | Min | Typ | Max | Unit |\n| --------------- | ----------------------------------- | --- | --- | --- | ---- |\n|   USB VCC       | Input supply from USB               |     | TBC |     |  mW  |\n|   VIN           | Input from VIN pad                  |     | TBC |     |  mW  |",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Power Consumption"
+    }
+  },
+  {
+    "id": 93,
+    "text": "![Block Diagram of Arduino Nano](./assets/nano_block_diagram.png)",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Block Diagram"
+    }
+  },
+  {
+    "id": 94,
+    "text": "The primary processor in the Nano board is the high-performance and low-power 8-bit ATmega328 microcontroller that runs at a clock frequency of 16 MHz. The ability to interface external devices through serial communication supported by the chip with UART TTL (5V), I2C (TWI) and SPI. Nano can be programmed with Arduino software reducing the entry barriers for new users. Smallest dimension embedded hardware makes it a perfect choice for breadboard-friendly projects from the maker community.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Processor"
+    }
+  },
+  {
+    "id": 95,
+    "text": "![Power Tree of Arduino Nano](./assets/nano_power_tree.png)\n\nThe Nano can be powered by either the USB port or alternatively via VIN. The input supply of VIN is regulated by an LDO so the supply is limited to 5 V for the optimal functioning of the board. There is also another regulator which limits the voltage to 3.3V for powering the components with low voltage requirements.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Power Tree"
+    }
+  },
+  {
+    "id": 96,
+    "text": "If you want to program your Nano while offline you need to install the Arduino Desktop IDE **[1]** To connect the Nano to your computer, you’ll need a Micro-B USB cable. This also provides power to the board, as indicated by the LED.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Getting Started - IDE"
+    }
+  },
+  {
+    "id": 97,
+    "text": "All Arduino boards, including this one, work out-of-the-box on the Arduino Cloud Editor **[2]**, by just installing a simple plugin.\n\nThe Arduino Cloud Editor is hosted online, therefore it will always be up-to-date with the latest features and support for all boards. Follow **[3]** to start coding on the browser and upload your sketches onto your board.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Getting Started - Arduino Cloud Editor"
+    }
+  },
+  {
+    "id": 98,
+    "text": "Sample sketches for the board can be found either in the “Examples” menu in the Arduino IDE or in Arduino Documentation **[4]**.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Sample Sketches"
+    }
+  },
+  {
+    "id": 99,
+    "text": "Now that you have gone through the basics of what you can do with the board you can explore the endless possibilities it provides by checking exciting projects on Arduino Project Hub **[5]**, the Arduino Library Reference **[6]** and the online store **[7]** where you will be able to complement your board with sensors, actuators and more.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Online Resources"
+    }
+  },
+  {
+    "id": 100,
+    "text": "![Power Tree of Arduino Nano](./assets/nano_connector_pinout.png)",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Connector Pinouts"
+    }
+  },
+  {
+    "id": 101,
+    "text": "| Pin | Function | Type         | Description             |\n| --- | -------- | ------------ | ----------------------- |\n| 1   | +3V3     | Power        | 5V USB Power            |\n| 2   | A0       | Analog       | Analog input 0 /GPIO    |\n| 3   | A1       | Analog       | Analog input 1 /GPIO    |\n| 4   | A2       | Analog       | Analog input 2 /GPIO    |\n| 5   | A3       | Analog       | Analog input 3 /GPIO    |\n| 6   | A4       | Analog       | Analog input 4 /GPIO    |\n| 7   | A5       | Analog       | Analog input 5 /GPIO    |\n| 8   | A6       | Analog       | Analog input 6 /GPIO    |\n| 9   | A7       | Analog       | Analog input 7 /GPIO    |\n| 10  | +5V      | Power        | +5V Power Rail          |\n| 11  | Reset    | Reset        | Reset                   |\n| 12  | GND      | Power        | Ground                  |\n| 12  | VIN      | Power        | Voltage Input           |",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Analog"
+    }
+  },
+  {
+    "id": 102,
+    "text": "| Pin | Function | Type    | Description             |\n| --- | -------- | ------- | ----------------------- |\n| 1   | D1/TX1   | Digital | Digital Input 1 /GPIO   |\n| 2   | D0/RX0   | Digital | Digital Input 0 /GPIO   |\n| 3   | D2       | Digital | Digital Input 2 /GPIO   |\n| 4   | D3       | Digital | Digital Input 3 /GPIO   |\n| 5   | D4       | Digital | Digital Input 4 /GPIO   |\n| 6   | D5       | Digital | Digital Input 5 /GPIO   |\n| 7   | D6       | Digital | Digital Input 6 /GPIO   |\n| 8   | D7       | Digital | Digital Input 7 /GPIO   |\n| 9   | D8       | Digital | Digital Input 8 /GPIO   |\n| 10  | D9       | Digital | Digital Input 9 /GPIO   |\n| 11  | D10      | Digital | Digital Input 10 /GPIO  |\n| 12  | D11      | Digital | Digital Input 11 /GPIO  |\n| 13  | D12      | Digital | Digital Input 12 /GPIO  |\n| 14  | D13      | Digital | Digital Input 13 /GPIO  |\n| 15  | Reset    | Reset   | Reset                   |\n| 16  | GND      | Power   | Ground                  |",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Digital"
+    }
+  },
+  {
+    "id": 103,
+    "text": "| Pin | Function | Type         | Description             |\n| --- | -------- | ------------ | ----------------------- |\n| 1   | PB0      | Internal     | Serial Wire Debug       |\n| 2   | PB1      | Internal     | Serial Wire Debug       |\n| 3   | PB2      | Internal     | Serial Wire Debug       |\n| 4   | PB3      | Internal     | Serial Wire Debug       |\n| 5   | PB4      | Internal     | Serial Wire Debug       |\n| 6   | PB5      | Internal     | Serial Wire Debug       |",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "ATmega328"
+    }
+  },
+  {
+    "id": 104,
+    "text": "![Mechanical dimensions of Arduino Nano](./assets/nano_mechanical_dimension.png)",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Mechanical Information"
+    }
+  },
+  {
+    "id": 105,
+    "text": "We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Declaration of Conformity CE DoC (EU)"
+    }
+  },
+  {
+    "id": 106,
+    "text": "Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. \n\n| **Substance**                          | **Maximum Limit (ppm)** |\n| -------------------------------------- | ----------------------- |\n| Lead (Pb)                              | 1000                    |\n| Cadmium (Cd)                           | 100                     |\n| Mercury (Hg)                           | 1000                    |\n| Hexavalent Chromium (Cr6+)             | 1000                    |\n| Poly Brominated Biphenyls (PBB)        | 1000                    |\n| Poly Brominated Diphenyl ethers (PBDE) | 1000                    |\n| Bis(2-Ethylhexyl} phthalate (DEHP)     | 1000                    |\n| Benzyl butyl phthalate (BBP)           | 1000                    |\n| Dibutyl phthalate (DBP)                | 1000                    |\n| Diisobutyl phthalate (DIBP)            | 1000                    |\n\nExemptions : No exemptions are claimed. \n\nArduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the \"Authorization List\" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Declaration of Conformity to EU RoHS & REACH 211 01/19/2021"
+    }
+  },
+  {
+    "id": 107,
+    "text": "As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Conflict Minerals Declaration"
+    }
+  },
+  {
+    "id": 108,
+    "text": "Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.\n\nThis device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: \n\n(1) This device may not cause harmful interference\n\n(2) this device must accept any interference received, including interference that may cause undesired operation.\n\n**FCC RF Radiation Exposure Statement:**\n\n1. This Transmitter must not be co-located or operating in conjunction with any other antenna or transmitter.\n\n2. This equipment complies with RF radiation exposure limits set forth for an uncontrolled environment.\n\n3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.\n\nEnglish: \nUser manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:\n\n(1) this device may not cause interference\n\n(2) this device must accept any interference, including interference that may cause undesired operation of the device.\n\nFrench: \nLe présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :\n\n(1) l’ appareil nedoit pas produire de brouillage\n\n(2) l’utilisateur de l’appareil doit accepter tout brouillage radioélectrique subi, même si le brouillage est susceptible d’en compromettre le fonctionnement.\n\n**IC SAR Warning:**\n\nEnglish \nThis equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  \n\nFrench: \nLors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.\n\n**Important:** The operating temperature of the EUT can’t exceed 80℃ and shouldn’t be lower than -20℃.\n\nHereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "FCC Caution"
+    }
+  },
+  {
+    "id": 109,
+    "text": "| Company name    | Arduino S.r.l.                                                |\n| --------------- | ------------------------------------------------------------- |\n| Company Address | Via Andrea Appiani 25, 20900 MONZA MB, Italy                  |",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Company Information"
+    }
+  },
+  {
+    "id": 110,
+    "text": "| Ref                                    | Link                                                                                                |\n| -------------------------------------- | --------------------------------------------------------------------------------------------------- |\n| Arduino IDE (Desktop)                  | https://www.arduino.cc/en/software                                                                  |\n| Arduino Cloud Editor                   | https://create.arduino.cc/editor                                                                    |\n| Arduino Cloud Editor - Getting Started | https://docs.arduino.cc/arduino-cloud/guides/editor/                                                |\n| Arduino Documentation                  | https://docs.arduino.cc/hardware/nano                                                               |\n| Arduino Project Hub                    | https://create.arduino.cc/projecthub?by=part&part_id=11332&sort=trending                            |\n| Library Reference                      | https://www.arduino.cc/reference/en/libraries/                                                      |\n| Online Store                           | https://store.arduino.cc/                                                                           |",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Reference Documentation"
+    }
+  },
+  {
+    "id": 111,
+    "text": "| **Date**   | **Revision** | **Changes**                           |\n| ---------- | ------------ | ------------------------------------- |\n| 12/06/2025 | 4            | Updated power tree                    |\n| 25/04/2024 | 3            | Updated link to new Cloud Editor      |\n| 03/08/2022 | 2            | Reference documentation links updates |\n| 12/04/2022 | 1            | First Release                         |\n\n> **Nota editorial de preparación:** esta ficha contiene datos que no coinciden entre sus propios apartados y con `especificaciones.md`, entre ellos el tipo de conector USB, el número de pines digitales y los márgenes de alimentación. Se conserva la fuente sin corregirla; señala la discrepancia si afecta a una respuesta.",
+    "metadata": {
+      "board": "NANO",
+      "source": "ficha_tecnica.md",
+      "section": "Revision History"
+    }
+  }
+]

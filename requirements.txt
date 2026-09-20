@@ -4,3 +4,5 @@ python-multipart
 torch
 torchvision
 Pillow
+sentence-transformers
+faiss-cpu
