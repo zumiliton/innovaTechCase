@@ -1,27 +1,73 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arduino Assistant</title>
-    <link rel="stylesheet" href="/static/style.css">
+
+
+<title>Arduino Multimodal Assistant</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+
 </head>
 
 <body>
 
 <main class="container">
 
+
+<!-- ==================================================
+     HEADER
+     ================================================== -->
+
+<header class="page-header">
+
     <h1>Arduino Multimodal Assistant</h1>
 
-    <section class="card">
+    <p>
+        Identify your board and ask questions about it.
+    </p>
 
-        <h2>Identify your Arduino board</h2>
+</header>
 
-        <label class="upload-area" for="imageInput">
-            <span>📷</span>
-            <strong>Choose an image</strong>
-            <small>PNG, JPG or JPEG</small>
+
+<!-- ==================================================
+     WORKSPACE
+     ================================================== -->
+
+<div class="workspace">
+
+
+    <!-- ==================================================
+         LEFT: BOARD IDENTIFICATION
+         ================================================== -->
+
+    <section class="card board-card">
+
+        <h2>Identify your board</h2>
+
+        <label
+            class="upload-area"
+            for="imageInput"
+        >
+
+            <span class="upload-icon">
+                📷
+            </span>
+
+            <strong>
+                Choose an image
+            </strong>
+
+            <small>
+                PNG, JPG or JPEG
+            </small>
+
         </label>
+
 
         <input
             id="imageInput"
@@ -30,21 +76,245 @@
             hidden
         >
 
-        <div id="previewContainer" class="preview hidden">
-            <img id="preview" alt="Selected Arduino image">
+
+        <!-- Image preview -->
+
+        <div
+            id="previewContainer"
+            class="preview hidden"
+        >
+
+            <img
+                id="preview"
+                alt="Selected Arduino image"
+            >
+
         </div>
 
-        <button id="uploadButton" disabled>
+
+        <!-- Identify -->
+
+        <button
+            id="uploadButton"
+            disabled
+        >
             Identify board
         </button>
 
-        <div id="result" class="result hidden"></div>
+
+        <!-- Prediction result -->
+
+        <div
+            id="result"
+            class="result hidden"
+        ></div>
 
     </section>
 
+
+
+    <!-- ==================================================
+         RIGHT: CHATBOT
+         ================================================== -->
+
+    <section class="card chat-card">
+
+
+        <!-- Chat header -->
+
+        <div class="chat-header">
+
+            <div>
+
+                <h2>
+                    Arduino Assistant
+                </h2>
+
+                <span
+                    id="chatStatus"
+                    class="chat-status"
+                >
+                    <span class="status-dot"></span>
+
+                    Identify a board to start chatting
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             CHAT WINDOW
+             ================================================== -->
+
+        <div
+            id="chatMessages"
+            class="chat-messages"
+        >
+
+            <!-- Initial message -->
+
+            <div
+                id="emptyChat"
+                class="empty-chat"
+            >
+
+                <div class="empty-chat-icon">
+                    💬
+                </div>
+
+                <strong>
+                    Ask about your Arduino
+                </strong>
+
+                <p>
+                    Identify a board first, then ask
+                    questions about its specifications
+                    and documentation.
+                </p>
+
+            </div>
+
+
+            <!--
+                The JavaScript will add messages here.
+
+                Example:
+
+                <div class="chat-message user">
+                    <div class="message-label">
+                        You
+                    </div>
+
+                    <div class="message-bubble">
+                        What pins does this board have?
+                    </div>
+                </div>
+
+
+                <div class="chat-message assistant">
+                    <div class="message-label">
+                        Arduino Assistant
+                    </div>
+
+                    <div class="message-bubble">
+                        The Arduino Uno has...
+                    </div>
+                </div>
+
+            -->
+
+        </div>
+
+
+
+        <!-- ==================================================
+             CHAT INPUT
+             ================================================== -->
+
+        <div class="chat-input-area">
+
+            <input
+                type="text"
+                name="chat"
+                id="questionInput"
+                placeholder="Identify a board first..."
+                disabled
+                autocomplete="off"
+            >
+
+            <button
+                id="askButton"
+                disabled
+            >
+                Ask
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
 </main>
+
+<!-- ==================================================
+     APPLICATION JAVASCRIPT
+     ================================================== -->
 
 <script src="/static/app.js"></script>
 
+<!-- ==================================================
+     DEVELOPMENT AUTO RELOAD
+     ================================================== -->
+
+<script>
+
+    let lastVersion = null;
+
+
+    async function checkForChanges() {
+
+        try {
+
+            const response = await fetch(
+                "/dev/reload-version",
+                {
+                    cache: "no-store"
+                }
+            );
+
+
+            if (!response.ok) {
+                return;
+            }
+
+
+            const data =
+                await response.json();
+
+
+            if (lastVersion === null) {
+
+                lastVersion =
+                    data.version;
+
+                return;
+            }
+
+
+            if (
+                data.version !==
+                lastVersion
+            ) {
+
+                window.location.reload();
+
+            }
+
+        }
+        catch (error) {
+
+            console.debug(
+                "Reload check failed:",
+                error
+            );
+
+        }
+
+    }
+
+
+    setInterval(
+        checkForChanges,
+        500
+    );
+
+</script>
+
 </body>
+
 </html>

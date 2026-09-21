@@ -6,3 +6,5 @@ torchvision
 Pillow
 sentence-transformers
 faiss-cpu
+openai
+requests

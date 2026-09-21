@@ -10,23 +10,23 @@ class Retriever:
 
     def __init__(
         self,
-        index_path: str | Path,
-        metadata_path: str | Path,
+        index_path,
+        metadata_path,
+        embedding_model_path=None,
     ):
         self.index_path = Path(index_path)
         self.metadata_path = Path(metadata_path)
 
-        self.index = faiss.read_index(
-            str(self.index_path)
-        )
+        self.index = faiss.read_index(str(self.index_path))
 
-        with self.metadata_path.open(
-            "r",
-            encoding="utf-8",
-        ) as f:
+        with self.metadata_path.open("r", encoding="utf-8") as f:
             self.documents = json.load(f)
 
-        self.embedding_model = EmbeddingModel()
+        self.embedding_model = EmbeddingModel(
+            model_path=embedding_model_path
+            if embedding_model_path
+            else "models/embeddings/all-MiniLM-L6-v2"
+        )
 
     def retrieve(
         self,

@@ -1,15 +1,107 @@
 services:
-  app:
+
+  app-local:
+    profiles: ["local"]
+
     build:
       context: .
       dockerfile: Dockerfile
+      target: local
 
-    container_name: arduino-assistant
+    container_name: arduino-assistant-local
 
     ports:
       - "8000:8000"
 
     env_file:
       - .env
+
+    environment:
+      LLM_PROVIDER: local
+
+    volumes:
+      - ./app:/app/app
+      - ./models:/app/models
+      - ./data:/app/data
+
+    gpus: all
+
+    command:
+      [
+        "uvicorn",
+        "app.api.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ]
+
+    restart: unless-stopped
+
+  llama:
+    profiles: ["local"]
+
+    image: ghcr.io/ggml-org/llama.cpp:server-cuda
+
+    container_name: arduino-assistant-llama
+
+    volumes:
+      - ./models/llm:/models/llm
+
+    expose:
+      - "8080"
+
+    gpus: all
+
+    command:
+      [
+        "-m",
+        "/models/llm/Qwen3-8B-Q2_K.gguf",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8080",
+        "-c",
+        "4096",
+        "-ngl",
+        "99"
+      ]
+
+    restart: unless-stopped
+
+  app-api:
+    profiles: ["api"]
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+
+    container_name: arduino-assistant-api
+
+    ports:
+      - "8000:8000"
+
+    env_file:
+      - .env
+
+    environment:
+      LLM_PROVIDER: api
+
+    volumes:
+      - ./app:/app/app
+      - ./data:/app/data
+
+    command:
+      [
+        "uvicorn",
+        "app.api.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ]
 
     restart: unless-stopped
