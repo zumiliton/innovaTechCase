@@ -5,5 +5,5 @@ __pycache__/
 .venv/
 .DS_Store
 models/llm/*.gguf
-models/embeddings/
+models/embeddings/all-MiniLM-L6-v2
 models/vision/resnet_tl/best.pt
