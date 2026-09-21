@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 import re
 
-
+# Se define que es exacata
 @dataclass
 class DocumentChunk:
     text: str

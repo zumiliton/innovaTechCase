@@ -10,7 +10,7 @@ CLASS_NAMES = ["MEGA", "NANO", "UNO"]
 DEFAULT_MODEL_PATH = (
     Path("models")
     / "vision"
-    / "resnet18_target_adaptation"
+    / "resnet_tl"
     / "best.pt"
 )
 
