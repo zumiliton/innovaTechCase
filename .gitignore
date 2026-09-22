@@ -7,3 +7,12 @@ __pycache__/
 models/llm/*.gguf
 models/embeddings/all-MiniLM-L6-v2
 models/vision/resnet_tl/best.pt
+vision_module/models/checkpoints/resnet18_arduino_tl
+vision_module/data/processed/arduino_3class
+vision_module/data/processed/external_test_flat
+vision_module/data/raw/arduino.folder/test
+vision_module/data/raw/arduino.folder/train
+vision_module/data/raw/arduino.folder/valid
+vision_module/data/raw/external/Arduino_mega
+vision_module/data/raw/external/Arduino_nano
+vision_module/data/raw/external/Arduino_uno

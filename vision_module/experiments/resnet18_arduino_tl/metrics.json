@@ -1,0 +1,60 @@
+{
+  "num_images": 40,
+  "accuracy": 0.975,
+  "macro_f1": 0.9777530589543938,
+  "classes": [
+    "MEGA",
+    "NANO",
+    "UNO"
+  ],
+  "confusion_matrix": [
+    [
+      15,
+      0,
+      0
+    ],
+    [
+      0,
+      10,
+      0
+    ],
+    [
+      1,
+      0,
+      14
+    ]
+  ],
+  "classification_report": {
+    "MEGA": {
+      "precision": 0.9375,
+      "recall": 1.0,
+      "f1-score": 0.967741935483871,
+      "support": 15.0
+    },
+    "NANO": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 10.0
+    },
+    "UNO": {
+      "precision": 1.0,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9655172413793104,
+      "support": 15.0
+    },
+    "accuracy": 0.975,
+    "macro avg": {
+      "precision": 0.9791666666666666,
+      "recall": 0.9777777777777779,
+      "f1-score": 0.9777530589543938,
+      "support": 40.0
+    },
+    "weighted avg": {
+      "precision": 0.9765625,
+      "recall": 0.975,
+      "f1-score": 0.9749721913236931,
+      "support": 40.0
+    }
+  }
+}
