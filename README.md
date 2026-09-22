@@ -121,10 +121,9 @@ models/
     └── resnet_tl/
         └── best.pt
 ```
-
 ### 1. Modelo de lenguaje local — Qwen3
 
-Si se ha seleccionado el perfil `local`, **se debe utilizar el modelo Qwen3 cuantizado proporcionado para el proyecto**.
+Si se ha seleccionado el perfil `local`, se debe utilizar el modelo Qwen3 cuantizado proporcionado para el proyecto.
 
 El archivo debe estar ubicado en:
 
@@ -134,9 +133,12 @@ models/llm/Qwen3-8B-Q2_K.gguf
 
 El modelo se ejecuta mediante `llama.cpp` dentro del contenedor correspondiente.
 
-El modelo Qwen3 cuantizado puede descargarse directamente desde la **URL de Google Drive proporcionada junto con el proyecto**.
+El modelo puede descargarse desde:
 
-> Si se utiliza el perfil `api`, el modelo Qwen3 local no es necesario.
+* [Google Drive del proyecto](https://drive.google.com/drive/folders/1ld9JgjRMz28flyxhJoGdpkzlhbvCEUCx?usp=drive_link)
+* [Qwen3-8B-GGUF en Hugging Face](https://huggingface.co/ggml-org/Qwen3-8B-GGUF)
+
+Si se utiliza el perfil `api`, el modelo Qwen3 local no es necesario.
 
 ### 2. Modelo de embeddings — all-MiniLM-L6-v2
 
@@ -148,34 +150,33 @@ El modelo debe estar disponible en:
 models/embeddings/all-MiniLM-L6-v2/
 ```
 
-El modelo preparado para el proyecto puede descargarse directamente desde la **URL de Google Drive proporcionada junto con el proyecto**.
+Puede descargarse desde:
 
-Este modelo es necesario tanto con el perfil `local` como con el perfil `api`, ya que forma parte del sistema de recuperación del RAG.
+* [Google Drive del proyecto](https://drive.google.com/drive/folders/1ld9JgjRMz28flyxhJoGdpkzlhbvCEUCx?usp=drive_link)
+* [all-MiniLM-L6-v2 en Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+
+Si se descarga el archivo comprimido desde Google Drive, es necesario **descomprimirlo** y colocar el contenido del modelo en `models/embeddings/all-MiniLM-L6-v2/`.
+
+Este modelo es necesario tanto con el perfil `local` como con el perfil `api`.
 
 ### 3. Modelo de visión — ResNet18
 
 El clasificador de imágenes utiliza un modelo **ResNet18 ajustado para las tres clases de Arduino**.
 
-Este modelo puede obtenerse de dos formas.
+El checkpoint entrenado puede descargarse directamente desde:
 
-#### Opción A — Entrenar el modelo
-
-El repositorio contiene el script utilizado para realizar el entrenamiento mediante transfer learning:
-
-```text
-vision_module/src/train/train_resnet18_tl
-```
-
-Este script permite generar el modelo de visión a partir del código y los datos correspondientes.
-
-#### Opción B — Descargar el modelo ya entrenado
-
-Para facilitar el despliegue, el modelo ResNet18 ya entrenado también está disponible en la **URL de Google Drive proporcionada junto con el proyecto**.
+* [Google Drive del proyecto](https://drive.google.com/drive/folders/1ld9JgjRMz28flyxhJoGdpkzlhbvCEUCx?usp=drive_link)
 
 Una vez descargado, el checkpoint debe colocarse en:
 
 ```text
 models/vision/resnet_tl/best.pt
+```
+
+También es posible reproducir el entrenamiento utilizando el código incluido en el repositorio:
+
+```text
+vision_module/src/train/train_resnet18_tl
 ```
 
 Esta opción permite ejecutar directamente la aplicación sin volver a entrenar el modelo.
@@ -198,13 +199,35 @@ Una vez configurado el archivo `.env` y preparados los modelos, la aplicación p
 
 ### Primera ejecución
 
-La primera vez que se ejecuta el proyecto es necesario construir las imágenes:
+La primera vez que se utiliza el proyecto es necesario construir las imágenes Docker correspondientes a los perfiles que se quieran utilizar.
+
+#### Configuración `local`
+
+Para utilizar el modelo Qwen3 localmente, primero se debe seleccionar el perfil `local` en el archivo `.env`:
+
+```env
+# COMPOSE_PROFILES=api
+# LLM_PROVIDER=api
+# LLM_MODEL=openrouter/free
+# LLM_API_KEY=
+# LLM_BASE_URL=https://openrouter.ai/api/v1
+
+COMPOSE_PROFILES=local
+LLM_PROVIDER=local
+LLM_MODEL=
+LLM_API_KEY=
+LLM_BASE_URL=
+
+LOG_LEVEL=INFO
+```
+
+A continuación, construir la aplicación:
 
 ```bash
 docker compose build
 ```
 
-Una vez finalizado el proceso, se puede iniciar la aplicación con:
+Al iniciar la aplicación por primera vez, Docker descargará también la imagen de `llama.cpp`, que se utiliza como servidor de inferencia para ejecutar el modelo Qwen3 localmente.
 
 ```bash
 docker compose up
@@ -216,17 +239,50 @@ La aplicación quedará disponible en:
 http://localhost:8000
 ```
 
-### Ejecuciones posteriores
+#### Configuración `api`
 
-Después de haber construido las imágenes, **no es necesario ejecutar `docker compose build` cada vez que se inicia la aplicación**.
+Para utilizar un proveedor externo mediante API, se debe modificar el archivo `.env`, dejando activa únicamente la configuración `api`:
 
-Para iniciar la aplicación:
+```env
+COMPOSE_PROFILES=api
+LLM_PROVIDER=api
+LLM_MODEL=openrouter/free
+LLM_API_KEY=TU_API_KEY
+LLM_BASE_URL=https://openrouter.ai/api/v1
+
+# LOG_LEVEL
+LOG_LEVEL=INFO
+```
+
+La primera vez que se utilice este perfil también es necesario construir la imagen:
+
+```bash
+docker compose build
+```
+
+Después:
 
 ```bash
 docker compose up
 ```
 
-Para ejecutarla en segundo plano:
+La aplicación quedará disponible en:
+
+```text
+http://localhost:8000
+```
+
+> **Nota:** es necesario realizar el `build` una vez para cada perfil que se vaya a utilizar. El perfil `local` utiliza además la imagen de `llama.cpp` para ejecutar Qwen3 localmente. Una vez construidos los perfiles, no es necesario volver a ejecutar `docker compose build` para cambiar entre ellos.
+
+### Ejecuciones posteriores
+
+Una vez construido el perfil que se vaya a utilizar, basta con ejecutar:
+
+```bash
+docker compose up
+```
+
+Para ejecutar la aplicación en segundo plano:
 
 ```bash
 docker compose up -d
@@ -238,53 +294,46 @@ Para detener los contenedores:
 docker compose down
 ```
 
+No es necesario volver a ejecutar `docker compose build` en cada ejecución.
+
 ### Cambiar entre `local` y `api`
 
-La configuración del LLM se controla mediante el archivo `.env`.
+La configuración se selecciona directamente desde el archivo `.env`.
 
-Para cambiar de una configuración a otra:
+Para utilizar `local`, se deja activa esta configuración:
 
-1. Detener la ejecución actual:
+```env
+COMPOSE_PROFILES=local
+LLM_PROVIDER=local
+LLM_MODEL=
+LLM_API_KEY=
+LLM_BASE_URL=
+```
+
+y se comenta la configuración `api`.
+
+Para utilizar `api`, se hace lo contrario:
+
+```env
+COMPOSE_PROFILES=api
+LLM_PROVIDER=api
+LLM_MODEL=openrouter/free
+LLM_API_KEY=TU_API_KEY
+LLM_BASE_URL=https://openrouter.ai/api/v1
+```
+
+Después de modificar `.env`, se detienen los contenedores actuales:
 
 ```bash
 docker compose down
 ```
 
-2. Modificar `.env` y seleccionar el perfil deseado:
-
-```env
-COMPOSE_PROFILES=local
-LLM_PROVIDER=local
-```
-
-o:
-
-```env
-COMPOSE_PROFILES=api
-LLM_PROVIDER=api
-```
-
-3. Iniciar nuevamente la aplicación:
+y se inicia nuevamente la aplicación:
 
 ```bash
 docker compose up
 ```
 
-**No es necesario volver a ejecutar `docker compose build` al cambiar entre los perfiles `local` y `api`**, ya que ambos perfiles utilizan la misma aplicación y la selección del proveedor de LLM se realiza mediante las variables de entorno.
+**No es necesario volver a ejecutar `docker compose build` al cambiar entre perfiles si ambos perfiles ya han sido construidos previamente.**
 
-### ¿Cuándo es necesario volver a hacer `build`?
 
-Se debe volver a construir la imagen cuando se produzcan cambios que afecten a la imagen Docker, por ejemplo:
-
-* Cambios en el `Dockerfile`.
-* Cambios en las dependencias instaladas durante el build.
-* Cambios que requieran modificar la imagen base o su configuración.
-
-En esos casos:
-
-```bash
-docker compose build
-docker compose up
-```
-
-Los cambios realizados únicamente en `.env` **no requieren reconstruir la imagen**.
