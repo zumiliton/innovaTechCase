@@ -176,7 +176,7 @@ models/vision/resnet_tl/best.pt
 También es posible reproducir el entrenamiento utilizando el código incluido en el repositorio:
 
 ```text
-vision_module/src/train/train_resnet18_tl
+vision_module/src/training/train_resnet18_arduino_3class.py
 ```
 
 Esta opción permite ejecutar directamente la aplicación sin volver a entrenar el modelo.
