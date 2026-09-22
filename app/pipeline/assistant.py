@@ -6,9 +6,7 @@ from app.llm.api import APILLMProvider
 from app.rag.retriever import Retriever
 
 
-# ============================================================
-# PROJECT PATHS
-# ============================================================
+#PATHS
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -24,9 +22,7 @@ EMBEDDING_MODEL_PATH = (
 )
 
 
-# ============================================================
 # SYSTEM PROMPT
-# ============================================================
 
 SYSTEM_PROMPT = """
 You are a technical assistant specialized in Arduino boards.
@@ -95,9 +91,7 @@ ANSWER
 """
 
 
-# ============================================================
-# ARDUINO ASSISTANT
-# ============================================================
+# ARDUINO ASSISTAN
 
 class ArduinoAssistant:
 
@@ -135,9 +129,7 @@ class ArduinoAssistant:
         )
 
 
-    # ========================================================
-    # ASK
-    # ========================================================
+    # ASKING
 
     def ask(
         self,
@@ -226,9 +218,7 @@ class ArduinoAssistant:
         )
 
 
-        # ----------------------------------------------------
         # Debug information
-        # ----------------------------------------------------
 
         print("=" * 60)
         print("ARDUINO ASSISTANT")
@@ -238,16 +228,12 @@ class ArduinoAssistant:
         print("=" * 60)
 
 
-        # ----------------------------------------------------
         # Generate answer
-        # ----------------------------------------------------
 
         answer = self.llm.generate(prompt)
 
 
-        # ----------------------------------------------------
         # Return response
-        # ----------------------------------------------------
 
         return {
             "board": board,

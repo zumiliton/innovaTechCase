@@ -11,12 +11,7 @@ class DocumentChunk:
 
 
 def split_markdown_sections(text: str) -> list[tuple[str, str]]:
-    """
-    Split Markdown document by headings.
-
-    Returns:
-        [(section_title, section_text), ...]
-    """
+  
 
     pattern = r"^(#{1,6})\s+(.+)$"
 
@@ -51,9 +46,7 @@ def split_large_text(
     max_chars: int = 2500,
     overlap: int = 300,
 ) -> list[str]:
-    """
-    Split large text into overlapping chunks.
-    """
+   
 
     if len(text) <= max_chars:
         return [text.strip()]
@@ -85,9 +78,7 @@ def chunk_document(
     max_chars: int = 2500,
     overlap: int = 300,
 ) -> list[DocumentChunk]:
-    """
-    Convert a Markdown document into structured chunks.
-    """
+    
 
     sections = split_markdown_sections(text)
 

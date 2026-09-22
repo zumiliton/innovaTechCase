@@ -16,9 +16,9 @@ class ArduinoSession:
 
         self.messages = []
 
-    # --------------------------------------------------
+   
     # Board identification
-    # --------------------------------------------------
+   
 
     def classify_image(self, image):
 
@@ -33,9 +33,9 @@ class ArduinoSession:
 
         return prediction
 
-    # --------------------------------------------------
+   
     # Chat
-    # --------------------------------------------------
+   
 
     def ask(self, question: str):
 
