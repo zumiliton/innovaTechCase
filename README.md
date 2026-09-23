@@ -79,7 +79,7 @@ En este modo no es necesario proporcionar ningún token de API.
 
 ### Perfil API
 
-Para utilizar un proveedor externo:
+Para utilizar un proveedor externo (ejemplo con API de modelos gratuitos de OpenRouter, se pueden usar otras APIs):
 
 ```env
 COMPOSE_PROFILES=api
@@ -107,7 +107,7 @@ LLM_API_KEY=
 
 Antes de iniciar la aplicación es necesario disponer de los modelos utilizados por el sistema.
 
-Los modelos de gran tamaño **no están incluidos en el repositorio Git**. Para facilitar el despliegue, los **tres modelos utilizados por la aplicación están disponibles para su descarga desde la URL de Google Drive proporcionada junto con el proyecto**.
+Los modelos de gran tamaño **no están incluidos en el repositorio Git**. Para facilitar el despliegue, los **tres modelos utilizados por la aplicación están disponibles para su descarga desde la URL de Google Drive proporcionada junto con el proyecto** con el fin de facilitar y unificar el enlace de descarga de los mismos, pero tambien se adjunta en enlace nativo correspondiente de cada uno de los modelos para su descarga.
 
 La estructura esperada es:
 
@@ -131,7 +131,7 @@ El archivo debe estar ubicado en:
 models/llm/Qwen3-8B-Q2_K.gguf
 ```
 
-El modelo se ejecuta mediante `llama.cpp` dentro del contenedor correspondiente.
+El modelo se ejecuta mediante el server (levantado en el archivo .yml)`llama.cpp` dentro del contenedor correspondiente.
 
 El modelo puede descargarse desde:
 
@@ -179,7 +179,7 @@ También es posible reproducir el entrenamiento utilizando el código incluido e
 vision_module/src/training/train_resnet18_arduino_3class.py
 ```
 
-Esta opción permite ejecutar directamente la aplicación sin volver a entrenar el modelo.
+Esta opción permite entrenar el modelo propio y evitar la descarga, posterior al entrenamiento habria que reubicar el checkpoint del mejor modelo en el directorio indicado arriba.
 
 ### Resumen
 
@@ -272,7 +272,7 @@ La aplicación quedará disponible en:
 http://localhost:8000
 ```
 
-> **Nota:** es necesario realizar el `build` una vez para cada perfil que se vaya a utilizar. El perfil `local` utiliza además la imagen de `llama.cpp` para ejecutar Qwen3 localmente. Una vez construidos los perfiles, no es necesario volver a ejecutar `docker compose build` para cambiar entre ellos.
+
 
 ### Ejecuciones posteriores
 
@@ -322,13 +322,7 @@ LLM_API_KEY=TU_API_KEY
 LLM_BASE_URL=https://openrouter.ai/api/v1
 ```
 
-Después de modificar `.env`, se detienen los contenedores actuales:
-
-```bash
-docker compose down
-```
-
-y se inicia nuevamente la aplicación:
+Después de modificar `.env`, se inicia nuevamente la aplicación:
 
 ```bash
 docker compose up
