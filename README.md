@@ -176,7 +176,7 @@ models/vision/resnet_tl/best.pt
 También es posible reproducir el entrenamiento utilizando el código incluido en el repositorio:
 
 ```text
-vision_module/src/training/train_resnet18_arduino_3class.py
+vision_module/src/training/train_resnet18_tl.py
 ```
 
 Esta opción permite entrenar el modelo propio y evitar la descarga, posterior al entrenamiento habria que reubicar el checkpoint del mejor modelo en el directorio indicado arriba.
