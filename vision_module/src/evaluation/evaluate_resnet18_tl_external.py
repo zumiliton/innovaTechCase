@@ -11,10 +11,14 @@ from sklearn.metrics import (
     confusion_matrix,
 )
 
+"""
+Este script mhace el test del clasificador visual (RESNET) respecto a las 40 imagenes de ejemplo
+que nos pasan, y es el importante, por que clasificador se entrena con un DATASET distitno, y si tiene buen 
+performance aqui significa que generaliza y no hay DOMAIN SHIFT
+"""
 
-# ============================================================
+
 # Paths
-# ============================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -40,9 +44,9 @@ PREDICTIONS_PATH = OUTPUT_DIR / "predictions.csv"
 METRICS_PATH = OUTPUT_DIR / "metrics.json"
 
 
-# ============================================================
+
 # Configuration
-# ============================================================
+
 
 CLASS_NAMES = ["MEGA", "NANO", "UNO"]
 CLASS_TO_IDX = {name: i for i, name in enumerate(CLASS_NAMES)}
@@ -51,9 +55,9 @@ IDX_TO_CLASS = {i: name for name, i in CLASS_TO_IDX.items()}
 IMAGE_SIZE = 224
 
 
-# ============================================================
+
 # Device
-# ============================================================
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -62,9 +66,9 @@ print(f"Model: {MODEL_PATH}")
 print(f"External images: {DATA_DIR}")
 
 
-# ============================================================
+
 # Transform
-# ============================================================
+
 
 transform = transforms.Compose([
     transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
@@ -76,9 +80,9 @@ transform = transforms.Compose([
 ])
 
 
-# ============================================================
+
 # Load model
-# ============================================================
+
 
 model = models.resnet18(weights=None)
 
@@ -106,9 +110,9 @@ model = model.to(device)
 model.eval()
 
 
-# ============================================================
+
 # Evaluate
-# ============================================================
+
 
 image_paths = sorted(
     [
@@ -193,9 +197,9 @@ with torch.no_grad():
         )
 
 
-# ============================================================
+
 # Metrics
-# ============================================================
+
 
 accuracy = accuracy_score(y_true, y_pred)
 
@@ -217,9 +221,9 @@ cm = confusion_matrix(
 )
 
 
-# ============================================================
+
 # Print results
-# ============================================================
+
 
 print("\n" + "=" * 60)
 print("EXTERNAL TEST RESULTS")
@@ -252,9 +256,9 @@ for label in CLASS_NAMES:
     )
 
 
-# ============================================================
+
 # Save predictions CSV
-# ============================================================
+
 
 import csv
 
@@ -274,9 +278,9 @@ with open(PREDICTIONS_PATH, "w", newline="") as f:
     writer.writerows(results)
 
 
-# ============================================================
+
 # Save metrics JSON
-# ============================================================
+
 
 metrics = {
     "num_images": len(y_true),

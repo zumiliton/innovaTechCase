@@ -10,10 +10,13 @@ from sklearn.metrics import (
 )
 
 
-# ============================================================
-# Paths
-# ============================================================
 
+"""
+este test se hace respecto al holdout del dataset original descargad de ROBOFLOW, es interesante para validar la diferencia de metricas entre validacion y test pero tiene menos relevancia desde el punto de vista del performance que el test externo
+"""
+
+
+# Paths
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 print(PROJECT_ROOT)
 
@@ -35,9 +38,9 @@ DATA_DIR = (
 )
 
 
-# ============================================================
+
 # Configuration
-# ============================================================
+
 
 CLASS_NAMES = ["MEGA", "NANO", "UNO"]
 CLASS_TO_IDX = {name: i for i, name in enumerate(CLASS_NAMES)}
@@ -46,9 +49,9 @@ IDX_TO_CLASS = {i: name for name, i in CLASS_TO_IDX.items()}
 IMAGE_SIZE = 224
 
 
-# ============================================================
+
 # Device
-# ============================================================
+
 
 device = torch.device(
     "cuda" if torch.cuda.is_available() else "cpu"
@@ -59,9 +62,9 @@ print(f"Model: {MODEL_PATH}")
 print(f"Internal test set: {DATA_DIR}")
 
 
-# ============================================================
+
 # Transform
-# ============================================================
+
 
 transform = transforms.Compose([
     transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
@@ -73,9 +76,9 @@ transform = transforms.Compose([
 ])
 
 
-# ============================================================
+
 # Load model
-# ============================================================
+
 
 model = models.resnet18(weights=None)
 
@@ -100,9 +103,9 @@ model = model.to(device)
 model.eval()
 
 
-# ============================================================
+
 # Collect test images
-# ============================================================
+
 
 image_paths = []
 
@@ -134,9 +137,9 @@ if not image_paths:
 print(f"\nFound {len(image_paths)} internal test images.\n")
 
 
-# ============================================================
+
 # Evaluate
-# ============================================================
+
 
 y_true = []
 y_pred = []
@@ -202,9 +205,9 @@ with torch.no_grad():
         )
 
 
-# ============================================================
+
 # Metrics
-# ============================================================
+
 
 accuracy = accuracy_score(
     y_true,
@@ -226,9 +229,9 @@ cm = confusion_matrix(
 )
 
 
-# ============================================================
+
 # Print results
-# ============================================================
+
 
 print("\n" + "=" * 60)
 print("INTERNAL TEST RESULTS")

@@ -2,18 +2,16 @@ import shutil
 from pathlib import Path
 
 
-# ============================================================
-# PROJECT PATHS
-# ============================================================
+"""
+Este script s eencarga de coger las imagenes que nos pasaron 
+de ejemplo data/raw/external/Arduino_UNO,MEGA,NANO y genera un unico directorio
+flat con todas las iamgenes clasificadas en su etiqueta para la evaluación posterior del
+clasificador visual
+"""
 
-# prepare_external_test.py
-#   -> src/
-#       -> datasets/
-#           -> prepare_external_test.py
-#
-# parents[0] = src/datasets
-# parents[1] = src
-# parents[2] = vision_module
+
+
+# PROJECT PATHS
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -32,9 +30,7 @@ DEST = (
 )
 
 
-# ============================================================
 # CLASS CONFIGURATION
-# ============================================================
 
 CLASSES = {
     "Arduino_mega": "MEGA",
@@ -55,9 +51,7 @@ VALID_EXTENSIONS = {
 }
 
 
-# ============================================================
 # PREPARE EXTERNAL TEST SET
-# ============================================================
 
 def prepare_external_test():
     """
@@ -195,9 +189,7 @@ def prepare_external_test():
     print(f"  {DEST}")
 
 
-# ============================================================
 # MAIN
-# ============================================================
 
 if __name__ == "__main__":
     prepare_external_test()
