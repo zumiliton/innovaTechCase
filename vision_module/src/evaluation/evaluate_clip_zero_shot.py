@@ -12,7 +12,9 @@ from sklearn.metrics import (
     confusion_matrix,
 )
 
-
+"""
+Este scrip nos sirve para evaluar un clasificador multimodal general (para comprobar si debemos invertir esfuerzos o podemos usar algo directamente ya generado del SOTA sin entrenamiento especifico) con clasificacion ZERO-SHOT para clasificar nuestra tres categorias.Elegimos el CLIP con sus encoders VIT, para embeddings IMAGEN-TEXTO
+"""
 
 # PROJECT PATHS
 
